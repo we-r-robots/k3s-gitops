@@ -34,9 +34,14 @@ spec:
             cpu: 200m
             memory: 200Mi
         podMonitorNamespaceSelector: {}
-        podMonitorSelector:
-          matchLabels:
-            app.kubernetes.io/component: monitoring
+        podMonitorSelector: {}
+        serviceMonitorNamespaceSelector: {}
+        serviceMonitorSelector: {}
     grafana:
-      defaultDashboardsEnabled: false
-      adminPassword: flux
+      defaultDashboardsEnabled: true
+      ingress:
+        enabled: true
+        ingressClassName: "traefik"
+        hosts:
+          - grafana.ehomelab.local
+        paths: /
