@@ -14,9 +14,13 @@ spec:
   bootstrap:
     initdb:
       database: n8n
-      owner:
-        name: n8n
-        secret:
-          name: n8n-db-app
+      owner: n8n
   monitoring:
     enablePodMonitor: true
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
