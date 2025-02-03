@@ -13,12 +13,3 @@ spec:
         kind: HelmRepository
         name: traefik
         namespace: flux-system
-  values:
-    ingressRoute:
-      dashboard:
-        enabled: true
-        matchRule: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
-        services:
-          - name: api@internal
-            kind: TraefikService
-        entryPoints: ["web"]
