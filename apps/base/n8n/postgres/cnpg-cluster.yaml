@@ -1,0 +1,22 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: n8n-db
+  namespace: n8n
+spec:
+  instances: 3
+  primaryUpdateStrategy: unsupervised
+  storage:
+    size: 20Gi
+  superuserSecret:
+    name: n8n-db-superuser
+  enableSuperuserAccess: true
+  bootstrap:
+    initdb:
+      database: n8n
+      owner:
+        name: n8n
+        secret:
+          name: n8n-db-app
+  monitoring:
+    enablePodMonitor: true
