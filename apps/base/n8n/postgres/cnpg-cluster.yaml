@@ -9,7 +9,7 @@ spec:
   storage:
     size: 20Gi
   superuserSecret:
-    name: n8n-db-superuser
+    name: n8n-db-creds
   enableSuperuserAccess: true
   bootstrap:
     initdb:
