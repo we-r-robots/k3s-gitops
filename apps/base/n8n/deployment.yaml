@@ -17,58 +17,24 @@ spec:
       labels:
         service: n8n
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
       containers:
         - name: n8n
-          image: n8nio/n8n:latest
-          env:
-            - name: DB_TYPE
-              value: postgresdb
-            - name: DB_POSTGRESDB_HOST
-              value: n8n-db-rw.n8n.svc.cluster.local
-            - name: DB_POSTGRESDB_PORT
-              value: "5432"
-            - name: DB_POSTGRESDB_DATABASE
-              value: n8n
-            - name: DB_POSTGRESDB_USER
-              valueFrom:
-                secretKeyRef:
-                  name: n8n-container-env
-                  key: DB_POSTGRESDB_USER
-            - name: DB_POSTGRESDB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: n8n-container-env
-                  key: DB_POSTGRESDB_PASSWORD
-            - name: N8N_PROTOCOL
-              value: http
-            - name: N8N_PORT
-              value: "5678"
-            - name: N8N_HOST
-              value: "n8n.ehomelab.local"
+          image: docker.n8n.io/n8nio/n8n:1.69.2
+          securityContext:
+            allowPrivilegeEscalation: false
+          envFrom:
+            - secretRef:
+                name: n8n-container-env
           ports:
             - containerPort: 5678
-          resources:
-            requests:
-              memory: "500Mi"
-              cpu: "500m"
-            limits:
-              memory: "750Mi"
-              cpu: "750m"
+              protocol: TCP
           volumeMounts:
             - mountPath: /home/node/.n8n
               name: n8n-data
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 5678
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 5678
-            initialDelaySeconds: 30
-            periodSeconds: 10
       volumes:
         - name: n8n-data
           persistentVolumeClaim:
