@@ -1,0 +1,13 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: pgadmin
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`pgadmin.ehomelab.local`)
+      kind: Rule
+      services:
+        - name: pgadmin
+          port: 3004
