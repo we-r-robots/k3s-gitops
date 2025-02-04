@@ -23,7 +23,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: n8n
-          image: docker.n8n.io/n8nio/n8n:1.69.2
+          image: n8nio/n8n:latest
           securityContext:
             allowPrivilegeEscalation: false
           envFrom:
@@ -39,3 +39,4 @@ spec:
         - name: n8n-data
           persistentVolumeClaim:
             claimName: n8n-data
+r
