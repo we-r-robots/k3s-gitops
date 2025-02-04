@@ -29,6 +29,8 @@ spec:
           envFrom:
             - secretRef:
                 name: n8n-container-env
+            - configMapRef:
+                name: n8n-config
           ports:
             - containerPort: 5678
               protocol: TCP
