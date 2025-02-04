@@ -39,4 +39,3 @@ spec:
         - name: n8n-data
           persistentVolumeClaim:
             claimName: n8n-data
-r
