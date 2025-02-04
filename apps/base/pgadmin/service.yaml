@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pgadmin
+  namespace: pgadmin
+spec:
+  ports:
+    - port: 3004
+      targetPort: 3004
+  selector:
+    app: pgadmin
+  type: ClusterIP
