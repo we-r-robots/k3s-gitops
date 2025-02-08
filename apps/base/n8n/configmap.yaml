@@ -10,3 +10,4 @@ data:
   DB_POSTGRESDB_PORT: "5432"
   N8N_PROTOCOL: "https"
   N8N_HOST: "n8n.werrobots.cloud"
+  N8N_PORT: "443"
