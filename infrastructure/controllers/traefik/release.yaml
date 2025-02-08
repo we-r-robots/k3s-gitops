@@ -17,8 +17,3 @@ spec:
     ingressRoute:
       dashboard:
         enabled: true
-        matchRule: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
-        services:
-          - name: api@internal
-            kind: TraefikService
-        entryPoints: ["web"]
