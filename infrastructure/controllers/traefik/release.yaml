@@ -17,3 +17,7 @@ spec:
     ingressRoute:
       dashboard:
         enabled: true
+    tlsStore:
+      default:
+        defaultCertificate:
+          secretName: wildcard-werrobots-cloud-tls
