@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wildcard-werrobots-cloud
+  namespace: traefik
+spec:
+  secretName: wildcard-werrobots-cloud-tls
+  dnsNames:
+    - "werrobots.cloud"
+    - "*.werrobots.cloud"
+  issuerRef:
+    name: cloudflare
+    kind: Issuer
