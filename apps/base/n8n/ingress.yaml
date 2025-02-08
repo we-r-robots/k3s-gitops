@@ -3,8 +3,6 @@ kind: IngressRoute
 metadata:
   name: n8n
   namespace: n8n
-  annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: n8n/forwarded-headers@kubernetescrd
 spec:
   entryPoints:
     - web

@@ -11,4 +11,3 @@ resources:
   - pvc.yaml
   - service.yaml
   - http-https.yaml
-  - forward-headers.yaml
