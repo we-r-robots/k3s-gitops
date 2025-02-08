@@ -5,10 +5,14 @@ metadata:
   namespace: n8n
 spec:
   entryPoints:
+    - web
     - websecure
   routes:
     - match: Host(`n8n.werrobots.cloud`)
       kind: Rule
+      middlewares:
+        - name: redirect-https
+          namespace: n8n
       services:
         - name: n8n
-          port: 80
+          port: 5678
