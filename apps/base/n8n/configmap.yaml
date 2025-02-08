@@ -9,4 +9,4 @@ data:
   DB_POSTGRESDB_HOST: "n8n-db-rw.n8n.svc.cluster.local"
   DB_POSTGRESDB_PORT: "5432"
   N8N_PROTOCOL: "https"
-  N8N_HOST: "n8n.ehomelab.local"
+  N8N_HOST: "n8n.werrobots.cloud"
