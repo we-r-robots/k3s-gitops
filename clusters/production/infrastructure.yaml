@@ -12,8 +12,8 @@ spec:
     kind: GitRepository
     name: flux-system
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 metadata:
   name: monitoring-controllers
   namespace: flux-system

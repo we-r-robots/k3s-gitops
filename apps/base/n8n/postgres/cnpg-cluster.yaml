@@ -4,7 +4,7 @@ metadata:
   name: n8n-db
   namespace: n8n
 spec:
-  instances: 3
+  instances: 4
   primaryUpdateStrategy: unsupervised
   storage:
     size: 20Gi
