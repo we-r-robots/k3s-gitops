@@ -5,6 +5,7 @@ metadata:
   namespace: pgadmin
 spec:
   entryPoints:
+    - web
     - websecure
   routes:
     - match: Host(`pgadmin.ehomelab.local`)
