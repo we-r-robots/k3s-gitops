@@ -8,7 +8,7 @@ spec:
     - web
     - websecure
   routes:
-    - match: Host(`pgadmin.ehomelab.local`)
+    - match: Host(`pgadmin.werrobots.cloud`)
       kind: Rule
       services:
         - name: pgadmin
