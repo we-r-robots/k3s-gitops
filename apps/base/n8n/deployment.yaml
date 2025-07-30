@@ -23,7 +23,7 @@ spec:
         fsGroup: 1000
       containers:
         - name: n8n
-          image: n8nio/n8n:latest
+          image: n8nio/n8n:1.81.4
           securityContext:
             allowPrivilegeEscalation: false
           envFrom:
