@@ -7,3 +7,5 @@ images:
   - name: n8nio/n8n
     newTag: 1.81.4
 
+patchesStrategicMerge:
+  - configmap-patch.yaml
