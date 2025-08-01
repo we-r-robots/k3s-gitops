@@ -3,3 +3,13 @@ kind: Kustomization
 namespace: n8n
 resources:
   - ../../base/n8n
+
+namespace: n8n-staging
+
+images:
+  - name: n8nio/n8n
+    newTag: 1.104.2
+
+patchesStrategicMerge:
+  - configmap-patch.yaml
+  - ingress-patch.yaml
