@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cnpg-external
+  namespace: n8n
+spec:
+  type: NodePort
+  selector:
+    cnpg.io/cluster: n8n-db
+  ports:
+    - port: 5432
+      targetPort: 5432
+      nodePort: 30032

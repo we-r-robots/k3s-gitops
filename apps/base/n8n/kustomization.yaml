@@ -6,6 +6,7 @@ resources:
   - namespace.yaml
   - externalsecret.yaml
   - postgres/cnpg-cluster.yaml
+  - postgres/cnpg-external-service.yaml
   - deployment.yaml
   - ingress.yaml
   - pvc.yaml
